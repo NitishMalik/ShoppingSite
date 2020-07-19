@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Models;
 
-namespace Shopping.Data
+namespace Shopping.DataAccess.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -12,5 +13,7 @@ namespace Shopping.Data
             : base(options)
         {
         }
+
+        public DbSet<Category> Category { get; set; }
     }
 }
